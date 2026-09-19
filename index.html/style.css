@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffd6e7, #ffeaf3);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Birthday Card */
+.card {
+    background: white;
+    width: 350px;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 40px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h1 {
+    color: #ff4f91;
+    margin-bottom: 20px;
+}
+
+.card p {
+    color: #777;
+    font-size: 18px;
+}
+
+/* Birthday Message */
+.message {
+    display: none;
+    background: white;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.message h2 {
+    color: #ff4f91;
+    margin-bottom: 15px;
+}
+
+.message p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Gallery */
+.gallery {
+    display: none;
+    max-width: 900px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Cake */
+.cake {
+    display: none;
+    font-size: 100px;
+    margin-top: 30px;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+/* Phone */
+@media (max-width: 700px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery img {
+        height: 150px;
+    }
+
+/* =========================
+   CAKE + CANDLES
+========================= */
+
+.letter-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.side-cake {
+    position: absolute;
+    font-size: 45px;
+    z-index: 2;
+    filter: drop-shadow(0 0 10px #c88cff);
+    animation: candleGlow 1.5s infinite alternate;
+}
+
+
+.side-cake.left {
+    left: -55px;
+}
+
+
+.side-cake.right {
+    right: -55px;
+}
+
+
+.bottom-cake {
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px;
+    z-index: 3;
+    filter: drop-shadow(0 0 15px #c88cff);
+    animation: cakeBounce 1s infinite alternate;
+}
+
+
+@keyframes candleGlow {
+
+    from {
+        transform: translateY(0);
+        filter: drop-shadow(0 0 5px #c88cff);
+    }
+
+    to {
+        transform: translateY(-5px);
+        filter: drop-shadow(0 0 18px #f0c4ff);
+    }
+
+}
+
+
+@keyframes cakeBounce {
+
+    from {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(-7px);
+    }
+
+}
+}
